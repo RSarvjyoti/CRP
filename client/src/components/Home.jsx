@@ -67,9 +67,9 @@ const Home = () => {
 
   const handleStatusChange = async (id, status) => {
     try {
-      await axios.put(`http://localhost:8080/api/referrals/${id}`, { status });
+      await axios.put(`http://localhost:8080/referrals/${id}`, { status });
       setMessage("Referral status updated successfully");
-      const response = await axios.get("http://localhost:8080/api/referrals");
+      const response = await axios.get("http://localhost:8080/referrals");
       setReferrals(response.data);
       setOpenSnackbar(true);
     } catch (error) {
